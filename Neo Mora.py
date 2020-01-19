@@ -2,22 +2,22 @@ import random
 import math
 
 def main():
-    print("Hey welcome to neo mora\n1 - PVE (1 player)\n2 - PVP (2 players)")
-    choice = input("what do you want to play? ")
+    print("Hey, welcome to neo mora\n1 - PVE (1 player)\n2 - PVP (2 players)")
+    choice = input("which mode do you want to play? \n")
     if choice == '1':
         game = PVEGame()
         try: 
             game.play()
         except:
-            print("yo stop cheating")
+            print("Yo, stop cheating!")
     elif choice == '2':
         game = PVPgame()
         game.PVPplay()
     else:
-        print("wtf dude, u dumb?")
+        print("WTF dude, you dumb?")
     
     print()
-    print("bye!!!! thanks for playing!")
+    print("ye!!!! thanks for playing!")
         
 
 
@@ -25,7 +25,7 @@ class PVEGame():
 
     def play(self):
 
-        print("Hello, you are playing NEO MORA!")
+        print("You are playing Ultimate Neo Armstrong Cyber Mora 2: Training Mode")
         print()
         pnumber = self.getPlayerNumber()
         print("Your Opponent played a number")
@@ -87,8 +87,8 @@ class PVPgame():
         
         selectScreen = 1
         while selectScreen == 1:
-            InputP1 = input("Contestant 1, choose your fingers!!! Fingers: ")
-            if InputP1 < 0 | InputP1 > 5:
+            InputP1 = int(input("Contestant 1, choose your fingers!!! Fingers: "))
+            if InputP1 < 0 or InputP1 > 5:
                 print("Wrong! The number must be between 0 and 5!!")
             else:
                 selectScreen = 0
@@ -96,8 +96,8 @@ class PVPgame():
         selectScreen = 1
         print("\n")
         while selectScreen == 1:
-            InputP2 = input("Contestant 2, choose your fingers!!! Fingers: ")
-            if InputP2 < 0 | InputP2 > 5:
+            InputP2 = int(input("Contestant 2, choose your fingers!!! Fingers: "))
+            if InputP2 < 0 or InputP2 > 5:
                 print("Wrong! The number must be between 0 and 5!!")
             else:
                 selectScreen = 0            
@@ -105,20 +105,20 @@ class PVPgame():
         actualSum = InputP1 + InputP2
         
         print("Contestants have given their fingers.")
-        GuessP1 = input("Contestant 1, make your guess! Guessed sum: ")
-        print("n")
-        GuessP2 = input("Contestant 1, make your guess! Guessed sum: ")
+        GuessP1 = input("Contestant 1, do not hesitate, and make your guess! Guessed sum: ")
+        print("\n")
+        GuessP2 = input("Contestant 2, make your guess, and make your peace! Guessed sum: ")
         
         #Check which player was closer
-        CheckP1 = abs(actualSum - GuessP1)
-        CheckP2 = abs(actualSum - GuessP2)
+        CheckP1 = abs(int(actualSum) - int(GuessP1))
+        CheckP2 = abs(int(actualSum) - int(GuessP2))
         
         if CheckP1 < CheckP2:
             win = "Looks like contestant 1 came out victorious!\nThe new champion of Ultimate Neo Armstrong Cyber Mora 2 is crowned!"
         elif CheckP1 > CheckP2:
-            win = "Contestant 2 is the winner!"
+            win = "Contestant 2 is the winner!\nThe new champion of Ultimate Neo Armstrong Cyber Mora 2 is crowned!"
         else:
-            win = "It's a tie! Both contestants fought valiantly!\nThe new champion of Ultimate Neo Armstrong Cyber Mora 2 is crowned!"
+            win = "It's a tie! Both contestants fought valiantly!"
             
         print(win)
     
