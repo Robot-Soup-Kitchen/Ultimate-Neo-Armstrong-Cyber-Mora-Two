@@ -12,10 +12,7 @@ def main():
             print("yo stop cheating")
     elif choice == '2':
         game = PVPgame()
-        try: 
-            game.PVPplay()
-        except:
-            print("yo stop cheating")
+        game.PVPplay()
     else:
         print("wtf dude, u dumb?")
     
@@ -82,7 +79,7 @@ class PVEGame():
 
 class PVPgame():
 
-    def PVPplay():
+    def PVPplay(self):
         print("Ultimate Neo Armstrong Cyber Mora 2: Duel Mode")
         
         print("Select a number of fingers between 0 and 5. Choose wisely. The goal is to guess the sum of both members' fingers.")
@@ -115,7 +112,7 @@ class PVPgame():
         CheckP1 = abs(actualSum - GuessP1)
         CheckP2 = abs(actualSum - GuessP2)
         
-        if CheckP1 < checkP2:
+        if CheckP1 < CheckP2:
             win = "Looks like contestant 1 came out victorious!\nThe new champion of Ultimate Neo Armstrong Cyber Mora 2 is crowned!"
         elif CheckP1 > CheckP2:
             win = "Contestant 2 is the winner!"
