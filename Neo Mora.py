@@ -2,12 +2,26 @@ import random
 import math
 
 def main():
-    game = PVEGame()
-    while(1):
+    print("Hey welcome to neo mora\n1 - PVE (1 player)\n2 - PVP (2 players)")
+    choice = input("what do you want to play? ")
+    if choice == '1':
+        game = PVEGame()
         try: 
             game.play()
         except:
             print("yo stop cheating")
+    elif choice == '2':
+        game = PVPgame()
+        try: 
+            game.PVPplay()
+        except:
+            print("yo stop cheating")
+    else:
+        print("wtf dude, u dumb?")
+    
+    print()
+    print("bye!!!! thanks for playing!")
+        
 
 
 class PVEGame():
