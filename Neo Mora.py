@@ -105,13 +105,16 @@ class PVPgame():
         actualSum = InputP1 + InputP2
         
         print("Contestants have given their fingers.")
-        GuessP1 = input("Contestant 1, do not hesitate, and make your guess! Guessed sum: ")
+        GuessP1 = int(input("Contestant 1, do not hesitate, and make your guess! Guessed sum: "))
         print("\n")
-        GuessP2 = input("Contestant 2, make your guess, and make your peace! Guessed sum: ")
+        GuessP2 = input(("Contestant 2, make your guess, and make your peace! Guessed sum: "))
         
         #Check which player was closer
         CheckP1 = abs(int(actualSum) - int(GuessP1))
         CheckP2 = abs(int(actualSum) - int(GuessP2))
+        
+        print("The actual sum is... " + str(actualSum))
+        fingerprint(InputP1, InputP2)
         
         if CheckP1 < CheckP2:
             win = "Looks like contestant 1 came out victorious!\nThe new champion of Ultimate Neo Armstrong Cyber Mora 2 is crowned!"
